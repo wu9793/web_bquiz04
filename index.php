@@ -40,17 +40,18 @@
                 </div>
                 <div id="right">
                         <?php
-                        $do=$_GET['do']??'main';
-                        $file="./front/{do}.php";
-                        if(file_exists($file)){
+                        $do = $_GET['do'] ?? 'main';
+                        $file = "./front/{do}.php";
+                        if (file_exists($file)) {
                                 include $file;
-                        }else{
+                        } else {
                                 include "./front/main.php";
                         }
                         ?>
                 </div>
                 <div id="bottom" style="line-height:70px;background:url(icon/bot.png); color:#FFF;" class="ct">
-                        頁尾版權 : </div>
+                        <?=$Bottom->find(1)['bottom'];?>
+                </div>
         </div>
 
 </body>

@@ -4,7 +4,7 @@ session_start();
 
 class DB
 {
-    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=bquiz03";
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=bquiz04";
 
     protected $pdo;
     protected $table;
@@ -151,14 +151,8 @@ function to($url){
     header("location:$url");
 }
 
-$sess=[1=>'1400~1600',
-        2=>'1600~1800',
-        3=>'1800~2000',
-        4=>'2000~2200',
-        5=>'2200~2400',];
-$Poster=new DB('poster');
-$Movie=new DB('movie');
-$Order=new DB('orders');
+
+$Bottom=new DB('bottom');
 
 
 ?>
