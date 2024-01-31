@@ -1,6 +1,8 @@
-<h2>編輯會員資料</h2>
+<!-- 編輯會員資料頁面，複製註冊reg檔案並修改 -->
+<h2 class="ct">編輯會員資料</h2>
+<!-- table.all>tr*6>td.tt.ct+td.pp>input:text -->
 <?php
-$row = $Mem->find($_GET['id'])
+$row = $Mem->find($_GET['id']);
 ?>
 <form action="./api/reg.php" method="post">
     <table class="all">
@@ -12,11 +14,11 @@ $row = $Mem->find($_GET['id'])
         </tr>
         <tr>
             <td class="tt ct">密碼</td>
-            <td class="pp"><?=str_repeat("*",strlen($row['pw']));?></td>
+            <td class="pp"><?= str_repeat("*", strlen($row['pw'])); ?></td>
         </tr>
         <tr>
             <td class="tt ct">姓名</td>
-            <td class="pp"><input type="text" name="" value="<?= $row['name']; ?>"></td>
+            <td class="pp"><input type="text" name="name" value="<?= $row['name']; ?>"></td>
         </tr>
         <tr>
             <td class="tt ct">電話</td>
@@ -31,10 +33,10 @@ $row = $Mem->find($_GET['id'])
             <td class="pp"><input type="text" name="email" value="<?= $row['email']; ?>"></td>
         </tr>
     </table>
+    <div class="ct">
+        <input type="hidden" name="id" value="<?= $row['id']; ?>">
+        <input type="submit" value="編輯">
+        <input type="reset" value="重置">
+        <input type="button" value="取消" onclick="location.href='?do=mem'">
+    </div>
 </form>
-<div class="ct">
-    <input type="hidden" name="id" value="<?= $row['id']; ?>">
-    <input type="submit" value="編輯">
-    <input type="reset" value="重置">
-    <input type="button" value="取消" onclick="location.href='?do=mem'">
-</div>
