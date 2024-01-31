@@ -16,8 +16,8 @@
         <td class="pp ct"><?=$row['regdate'];?></td>
         <td class="pp ct">
             <?php
-            echo "<button onclick='location.href=&#39;?do=edit_admin&id={$row['id']}&#39;'>修改</button>";
-            echo "<button onclick='del(&#39;admin&#39;,{$row['id']})'>刪除</button>";
+            echo "<button onclick='location.href=&#39;?do=edit_mem&id={$row['id']}&#39;'>修改</button>";
+            echo "<button onclick='del(&#39;mem&#39;,{$row['id']})'>刪除</button>";
             ?>
         </td>
     </tr>
