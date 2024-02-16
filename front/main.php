@@ -63,11 +63,8 @@ foreach ($goods as $good) {
         </div>
         <div class="info">
             <div class="tt ct"><?= $good['name']; ?></div>
-            <div>
-                價錢:<?= $good['price']; ?>
-                <a href="?do=buycart&id=<?= $good['id']; ?>&qt=1" style="float:right">
-                    <img src="./icon/0402.jpg" alt="">
-                </a>
+            <div>價錢:<?= $good['price']; ?>
+                <img src="./icon/0402.jpg" style="float:right" onclick="location.href='?do=buycart&id=<?= $good['id']; ?>&qt=1'">
             </div>
             <div>
                 規格:<?= $good['spec']; ?>
