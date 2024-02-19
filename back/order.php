@@ -9,24 +9,25 @@
         <th class="tt ct">操作</th>
     </tr>
     <?php
-    $rows=$Order->all();
-    foreach($rows as $row){
+    $rows = $Order->all();
+    foreach ($rows as $row) {
     ?>
-    <tr>
-        <td class="pp ct">
-        <a href="?do=detail&id=<?=$row['id'];?>"></a>        
-        <?=$row['no'];?>
-    </td>
-        <td class="pp ct"><?=$row['total'];?></td>
-        <td class="pp ct"><?=$row['acc'];?></td>
-        <td class="pp ct"><?=$row['name'];?></td>
-        <td class="pp ct"><?=date("Y/m/d",strtotime($row['orderdate']));?></td>
-        <td class="pp ct">
-        <?php
-            echo "<button onclick='del(&#39;orders&#39;,{$row['id']})'>刪除</button>";    
-        ?>
-        </td>
-    </tr>
+        <tr>
+            <td class="pp ct">
+                <a href="?do=detail&id=<?= $row['id']; ?>">
+                    <?= $row['no']; ?>
+                </a>
+            </td>
+            <td class="pp ct"><?= $row['total']; ?></td>
+            <td class="pp ct"><?= $row['acc']; ?></td>
+            <td class="pp ct"><?= $row['name']; ?></td>
+            <td class="pp ct"><?= date("Y/m/d", strtotime($row['orderdate'])); ?></td>
+            <td class="pp ct">
+                <?php
+                echo "<button onclick='del(&#39;orders&#39;,{$row['id']})'>刪除</button>";
+                ?>
+            </td>
+        </tr>
     <?php
     }
     ?>
