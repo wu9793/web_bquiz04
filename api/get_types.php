@@ -1,7 +1,5 @@
-<?php
-include_once "db.php";
+<?php include_once "db.php";
 
-// $types=$Type->all(['big_id'=>$_GET['big_id']]);
 $types=$Type->all($_GET);
 
 foreach($types as $type){

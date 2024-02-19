@@ -1,4 +1,4 @@
-<?php
+<?php 
 include_once "db.php";
 
 if(!empty($_FILES['img']['tmp_name'])){

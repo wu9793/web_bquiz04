@@ -1,4 +1,11 @@
 <?php
 include_once "db.php";
 
-$Goods->save($_POST);
+
+
+
+
+
+
+
+$Order->save($_POST);

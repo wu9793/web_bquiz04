@@ -1,10 +1,10 @@
 <h2 class="ct">會員管理</h2>
 <table class="all">
     <tr>
-        <td class="tt ct">姓名</td>
-        <td class="tt ct">會員帳號</td>
-        <td class="tt ct">註冊日期</td>
-        <td class="tt ct">操作</td>
+        <th class="tt ct">姓名</th>
+        <th class="tt ct">會員帳號</th>
+        <th class="tt ct">註冊日期</th>
+        <th class="tt ct">管理</th>
     </tr>
     <?php
     $rows=$Mem->all();
@@ -15,10 +15,11 @@
         <td class="pp ct"><?=$row['acc'];?></td>
         <td class="pp ct"><?=$row['regdate'];?></td>
         <td class="pp ct">
-            <?php
+        <?php
             echo "<button onclick='location.href=&#39;?do=edit_mem&id={$row['id']}&#39;'>修改</button>";
             echo "<button onclick='del(&#39;mem&#39;,{$row['id']})'>刪除</button>";
-            ?>
+    
+        ?>
         </td>
     </tr>
     <?php

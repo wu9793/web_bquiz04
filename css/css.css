@@ -42,15 +42,16 @@ body
 #right
 {
 	display:inline-block;
-	width:65%;
+	width:71%;
 	padding:2%;
-	min-height:550px;
+	height:550px;
+	overflow: auto;
 	border:#000 1px solid;
 }
 #bottom
 {
 	height:70px;
-	background:url(icon/bot.png);
+	background:url(../icon/bot.png);
 	background-size:cover;
 }
 .al
@@ -103,7 +104,7 @@ input[type=text],input[type=password]
 	display:none;
 }
 #left .s a{
-	background-color: #EF7429;
+	background-color:lightgreen;
 }
 div.ww:hover > div.s
 {
@@ -113,3 +114,4 @@ div.ww:hover > div.s
 {
 	font-size:12px;
 }
+
