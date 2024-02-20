@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-02-16 09:34:29
+-- 產生時間： 2024-02-20 09:37:19
 -- 伺服器版本： 10.4.28-MariaDB
 -- PHP 版本： 8.2.4
 
@@ -115,8 +115,34 @@ CREATE TABLE `mem` (
 --
 
 INSERT INTO `mem` (`id`, `name`, `acc`, `pw`, `tel`, `addr`, `email`, `regdate`) VALUES
-(1, '6666', '6666', '6666', 'fedwwwwwwwwwwww', 'fwsedf', 'fwsvwsde', '2024-01-31'),
-(2, '9999', '9999', '9999', 'FDSAVDSGF', 'dsgvdsg', 'sdbvgv', '2024-01-16');
+(1, '6666', '6666', '6666', '123456', 'fwsedf', 'fwsvwsde', '2024-01-31');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `no` text NOT NULL,
+  `total` int(10) NOT NULL,
+  `acc` text NOT NULL,
+  `name` text NOT NULL,
+  `orderdate` timestamp NOT NULL DEFAULT current_timestamp(),
+  `email` text NOT NULL,
+  `addr` text NOT NULL,
+  `tel` text NOT NULL,
+  `cart` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `orders`
+--
+
+INSERT INTO `orders` (`id`, `no`, `total`, `acc`, `name`, `orderdate`, `email`, `addr`, `tel`, `cart`) VALUES
+(3, '20240219981959', 2685, '6666', '1234', '2024-02-19 01:20:50', 'fwsvwsde', 'fwsedf', '123456', 'a:3:{i:1;s:1:\"1\";i:2;s:1:\"1\";i:3;s:1:\"1\";}'),
+(4, '20240219128137', 1485, '6666', '6666', '2024-02-19 02:25:36', 'fwsvwsde', 'fwsedf', '123456', 'a:2:{i:2;s:1:\"1\";i:3;s:1:\"1\";}');
 
 -- --------------------------------------------------------
 
@@ -147,7 +173,8 @@ INSERT INTO `type` (`id`, `name`, `big_id`) VALUES
 (10, '時尚珠寶', 3),
 (11, '背包', 4),
 (16, '服飾', 0),
-(17, '帽踢', 16);
+(17, '帽踢', 16),
+(18, '斜背包', 4);
 
 --
 -- 已傾印資料表的索引
@@ -175,6 +202,12 @@ ALTER TABLE `goods`
 -- 資料表索引 `mem`
 --
 ALTER TABLE `mem`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `orders`
+--
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -212,10 +245,16 @@ ALTER TABLE `mem`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- 使用資料表自動遞增(AUTO_INCREMENT) `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- 使用資料表自動遞增(AUTO_INCREMENT) `type`
 --
 ALTER TABLE `type`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
